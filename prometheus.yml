@@ -1,0 +1,24 @@
+global:
+  scrape_interval:     5s 
+  evaluation_interval: 5s 
+
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'spring-ubuntu'
+    static_configs:
+      - targets: ['146.148.40.210:8081']
+      
+  - job_name: 'spring-debian'
+    static_configs:
+      - targets: ['34.68.223.233:8081']
+      
+  - job_name: 'spring-centos'
+    static_configs:
+      - targets: ['34.67.144.145:8081']
